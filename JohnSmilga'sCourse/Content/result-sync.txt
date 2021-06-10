@@ -1,0 +1,1 @@
+here is the result of the writefilesync in 10-fs-module.js:hello this is second text file, hello this is second text filehere is the result of the writefilesync in 10-fs-sync.js:hello this is first text file, hello this is second text filehere is the result of the writefilesync in 10-fs-sync.js:hello this is first text file, hello this is second text file

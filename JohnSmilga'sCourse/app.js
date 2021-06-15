@@ -8,7 +8,15 @@
 //with npm install -g <packageName>
 //sudo npm install -g <packageName>(mac)
 
-// package.json - manifest fila(stores important info about project/package)
+// package.json - manifest file(stores important info about project/package)
+
 // manual approach (create package.json in the root, create properties etc)
 // npm init (step by step, press enter to skip)
 // npm init -y (everything default)
+
+//this is different from the built in modules or node packages, the external ones you'll always need to install it before using, if we don't install the dependency node won't be able to find it 
+const _ = require('lodash')
+
+const items = [1,[2,[3,[4]]]]
+const newItems = _.flattenDeep(items) //used to transform this array of objects in an normal array
+console.log(newItems)

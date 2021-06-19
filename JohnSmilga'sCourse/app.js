@@ -1,10 +1,36 @@
-const http = require('http')
+const { readFile, writeFile } = require('fs').promises
+// const util = require('util')
+// const readFilePromise = util.promisify(readFile)
+// const writeFilePromise = util.promisify(writeFile)
 
-const server = http.createServer((req, res) => { //every time a request comes to the server a callback is sent to the console
-  console.log('request event')
-  res.end('Hello World')
-})
+const start = async () => {
+  try {
+    const first = await readFile('./content/first.txt', 'utf8')
+    const second = await readFile('./content/second.txt', 'utf8')
+    await writeFile(
+      './content/result-mind-grenade.txt',
+      `THIS IS AWESOME : ${first} ${second}`,
+      { flag: 'a' }
+    )
+    console.log(first, second)
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-server.listen(5000, () => { //this function is asynchnous so it stays forever running 
-  console.log('Server listening on port : 5000....')
-})
+start()
+
+// const getText = (path) => {
+//   return new Promise((resolve, reject) => {
+//     readFile(path, 'utf8', (err, data) => {
+//       if (err) {
+//         reject(err)
+//       } else {
+//         resolve(data)
+//       }
+//     })
+//   })
+// }
+// getText('./content/first.txt')
+//   .then((result) => console.log(result))
+//   .catch((err) => console.log(err))

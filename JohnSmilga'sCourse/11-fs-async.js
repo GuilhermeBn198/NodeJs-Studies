@@ -5,8 +5,8 @@ const { readFile, writeFile } = require('fs')
 //in this case we need to provide a callback which is runned whenever a functionality is completed
 
 console.log('start');
-
 readFile('./content/first.txt', 'utf8', (err, result) => { //this method functions with the first argument being the filename, the second one is the encoding type (ex: utf8) and the third one is the callback function
+    
     if (err) { //if theres an error then
         console.log(err)
         return

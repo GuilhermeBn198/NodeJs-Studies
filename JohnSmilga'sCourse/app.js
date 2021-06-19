@@ -1,36 +1,14 @@
-const { readFile, writeFile } = require('fs').promises
-// const util = require('util')
-// const readFilePromise = util.promisify(readFile)
-// const writeFilePromise = util.promisify(writeFile)
+const EventEmitter = require('events')
 
-const start = async () => {
-  try {
-    const first = await readFile('./content/first.txt', 'utf8')
-    const second = await readFile('./content/second.txt', 'utf8')
-    await writeFile(
-      './content/result-mind-grenade.txt',
-      `THIS IS AWESOME : ${first} ${second}`,
-      { flag: 'a' }
-    )
-    console.log(first, second)
-  } catch (error) {
-    console.log(error)
-  }
-}
+const customEmitter = new EventEmitter()
+//on is used to listen for an event
+//emit is used to emit an event
 
-start()
+customEmitter.on('response', (name, id)=> {//of course there'll be a callback function too 
+  console.log(`data recieved user ${name} with id:${id}`);
+}) //this will be listenning to an event called 'response'
+customEmitter.on('response', ()=> {
+  console.log(`some other logic here` );
+})
 
-// const getText = (path) => {
-//   return new Promise((resolve, reject) => {
-//     readFile(path, 'utf8', (err, data) => {
-//       if (err) {
-//         reject(err)
-//       } else {
-//         resolve(data)
-//       }
-//     })
-//   })
-// }
-// getText('./content/first.txt')
-//   .then((result) => console.log(result))
-//   .catch((err) => console.log(err))
+customEmitter.emit('response', 'john', 34) //this event can have whatever name you want it but you need to match its name to other functions such as 'on'

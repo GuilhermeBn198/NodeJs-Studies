@@ -1,7 +1,7 @@
 import { query } from "express";
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateUsers1624369593180 implements MigrationInterface {
+export class CreateUsers1624369593180 implements MigrationInterface { //migrations são controles de versionamento do banco de dados
 
     public async up(queryRunner: QueryRunner): Promise<void> { //metodo up cria uma tabela no migrations
 		await queryRunner.createTable(

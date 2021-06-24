@@ -1,6 +1,8 @@
 import { getCustomRepository } from "typeorm";
 import { UsersRepositories } from "../repositories/UsersRepositories"
 
+//esse arquivo funciona como um validador que informações do projeto
+
 interface IUserRequest{
 	name: string;
 	email: string;

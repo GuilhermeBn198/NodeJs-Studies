@@ -3,17 +3,22 @@ import { CreateUserService } from "../service/CreateUserService";
 
 class CreateUserController{
 	async handle(request: Request, response: Response) {
-		const {name, email, admin} = request.body;
+			const {name, email, admin} = request.body;
 
-		const createUserService = new CreateUserService();
+			const createUserService = new CreateUserService();
 
-		const user = await createUserService.execute({ name, email, admin});
+			const user = await createUserService.execute({ name, email, admin});
 
-		return response.json(user);
+			return response.json(user);
+
 	}
 }
 
 export {CreateUserController}
 
+/**
+ * Controller -> Service(throw new error)
+ */
 
-//-> server -> cpmtroller -> service -> service faz todo o resto do processo dele
+
+//-> server -> routes -> controller -> service -> service faz todo o resto do processo dele

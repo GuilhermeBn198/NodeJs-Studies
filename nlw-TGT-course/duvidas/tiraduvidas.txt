@@ -1,0 +1,23 @@
+toda vez q se ve ... antes da importação de uma biblioteca significa q a biblioteca necessita da importação de suas tipagens também
+
+geralmente as bibliotecas de tipos ficam em @types/NomeDaBiblioteca, nessa caso @types/express
+
+ get		=> Buscar uma informação
+ post		=> Inserir(criar) uma informação
+ put		=> Alterar uma informação
+ delete	=> Remover um dado
+ patch	=> Alterar uma informação específica
+
+ Tipos de parametros
+ Routes Params => http://localhost:3000/produtos/3812790239823981
+ Query Params => http://localhost:3000/produtos?name=teclado&description=tecladobom&etc&etc
+ 
+ Body Params => {
+ "name": "teclado",
+ "description": "teclado bom"
+
+
+JWT é a sigla pra JSON Web Token é um padrao de token que a gnt consegue criar com alguma propriedades e criptografadas que nos permite fazer a comunicaçlão entre requisições utilizando um token só, podendo verificar se o usuario é verificado, se é um token valido etc etc
+
+JWT É UM TOKEN QUE PASSAMOS ENTRE REQUISIÇÕES, tendo 3 blocos codificados, o header que dita qual o algoritmo de criptografia e o tipo, o Payload que são os dados criptografados(recomenda-se nunca colocar dados sensíveis aqui, pois mesmo criptografado ainda é possivel passar por essa barreira de proteção) e a sessão de Signature, que concatena a primeira com a segunda parte, onde passamos uma chave secreta que o token precisa pra poder validar o token.
+

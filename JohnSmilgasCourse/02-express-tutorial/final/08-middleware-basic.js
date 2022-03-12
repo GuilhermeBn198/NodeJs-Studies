@@ -3,6 +3,8 @@ const app = express()
 
 //  req => middleware => res
 
+// middlewares are literally everywhere in express
+
 const logger = (req, res, next) => {
   const method = req.method
   const url = req.url

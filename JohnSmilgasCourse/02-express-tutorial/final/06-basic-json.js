@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
 const { products } = require('./data')
+
+//with this we can access the varios contents of data.js without passing the literalmente archive
 app.get('/', (req, res) => {
-  res.json(products)
+  res.json(products) 
 })
 
 app.listen(5000, () => {

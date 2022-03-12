@@ -3,7 +3,8 @@ const app = express()
 const logger = require('./logger')
 const authorize = require('./authorize')
 //  req => middleware => res
-app.use([logger, authorize])
+app.use([logger, authorize]) //this is a magic trick to ALWAYS use the middleware that you need to use in every page the domain has without the need to manually put it into the path
+//using [] in app.use allow us to use multiple middlewares at the same time
 // api/home/about/products
 app.get('/', (req, res) => {
   res.send('Home')
